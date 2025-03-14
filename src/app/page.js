@@ -18,7 +18,7 @@ export default function Home() {
     // Fetch available courses on component mount
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://119.59.103.209:8000/courses');
+        const response = await fetch('https://chat-with-docs.api.thetigerteamacademy.net/courses');
         const data = await response.json();
         setCourses(data.courses);
         if (data.courses.length > 0) {
@@ -53,7 +53,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://119.59.103.209:8000/chat', {
+      const response = await fetch('https://chat-with-docs.api.thetigerteamacademy.net/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
